@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor Picante | Catálogo Artesanal de Michoacán</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        h1, h2, h3, .brand-font { font-family: 'Alfa Slab One', cursive; letter-spacing: 1px; }
+        body, p { font-family: 'Montserrat', sans-serif; }
+
+        .flame-bg {
+            background: #F5F0E1;
+            min-height: 100vh;
+        }
+
+        .rustic-card {
+            background-color: rgba(255, 248, 240, 0.98);
+            border: 4px solid #4a0d0d;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        .text-outline {
+            text-shadow: 
+                -2px -2px 0 #000,  
+                 2px -2px 0 #000,
+                -2px  2px 0 #000,
+                 2px  2px 0 #000,
+                 0px  4px 6px rgba(0,0,0,0.3);
+        }
+
+        .img-frame {
+            border: 3px solid #b71c1c;
+            padding: 5px;
+            background: white;
+            transform: rotate(-1.5deg);
+            transition: all 0.3s ease;
+        }
+        .img-frame:hover { transform: rotate(0deg) scale(1.03); }
+
+        .product-item { transition: transform 0.3s ease; }
+        .product-item:hover { transform: translateY(-8px); }
+
+        /* Estilo para los iconos sociales */
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+        .social-icon:hover { transform: scale(1.2); }
+    </style>
+</head>
+<body class="flame-bg text-gray-900 antialiased">
+
+    <nav class="fixed top-0 w-full z-50 bg-[#1a0505] text-white shadow-2xl border-b-2 border-yellow-600">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <img src="img/logo.jpeg" alt="Icono" class="h-10 w-10 rounded-full border-2 border-yellow-500">
+                    <span class="brand-font text-xs md:text-lg tracking-tighter">SABOR PICANTE</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 font-bold text-xs uppercase tracking-widest">
+                    <a href="#inicio" class="hover:text-yellow-500 transition">Inicio</a>
+                    <a href="#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
+                    <a href="#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                    <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
+                </div>
+
+                <div class="md:hidden flex">
+                    <a href="#contacto" class="bg-yellow-600 text-black px-3 py-1 rounded text-[10px] font-bold tracking-tighter">CONTACTO</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="pt-32 pb-16 px-4 text-center">
+        <img src="img/logo.jpeg" alt="Logo Sabor Picante" class="w-48 md:w-64 mx-auto mb-8 drop-shadow-2xl">
+        <h1 class="text-4xl md:text-7xl text-white uppercase mb-4 text-outline">Pasión por el Fuego</h1>
+        <p class="text-red-700 font-bold text-xl md:text-3xl brand-font italic">Michoacán, México</p>
+    </header>
+
+    <section id="nosotros" class="max-w-5xl mx-auto px-4 py-16">
+        <div class="rustic-card p-6 md:p-12 rounded-lg">
+            <h2 class="text-3xl md:text-4xl text-red-800 text-center mb-10 uppercase">Nuestra Raíz</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center text-justify">
+                <div class="space-y-6 text-lg text-gray-800">
+                    <p>Somos una pequeña empresa del estado de <strong>Michoacán, México</strong>. Nos dedicamos al cultivo de chiles regionales y exóticos, así como a crear algunos productos derivados del Chile.</p>
+                    <p>Nuestra pasión comenzó con el cultivo de <strong>Habanero Chocolate</strong> por su gran sabor ahumado y rico picor.</p>
+                    <p>Posteriormente comenzamos a cultivar el famosísimo <strong>Carolina Reaper</strong>, lo que despertó nuestra curiosidad por la inmensa diversidad de chiles que existen en el mundo.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="img/1.jpeg" alt="Proceso" class="img-frame w-full h-64 object-cover shadow-lg">
+                    <img src="img/2.jpeg" alt="Variedad" class="img-frame w-full h-64 object-cover shadow-lg mt-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="max-w-6xl mx-auto px-4 py-20">
+        <h2 class="text-4xl md:text-6xl text-white text-center mb-16 uppercase text-outline">Catálogo Exótico</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    
+    <a href="hojuelas.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-600 hover:shadow-2xl transition-all group">
+        <img src="img/hojuelas.jpeg" alt="Hojuelas" class="w-full h-64 object-cover rounded mb-4">
+        <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-red-900 uppercase">Hojuelas</h3>
+            <p class="text-gray-500 text-sm mt-2 italic">Chocolate, Naranja, Jalapeño y Mix Extremo.</p>
+            <span class="inline-block mt-4 text-red-700 font-bold text-xs underline group-hover:text-red-900">VER VARIEDADES →</span>
+        </div>
+    </a>
+
+    <a href="sales.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-yellow-600 hover:shadow-2xl transition-all group">
+        <img src="img/sales.jpeg" alt="Sales" class="w-full h-64 object-cover rounded mb-4">
+        <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-red-900 uppercase">Sales</h3>
+            <p class="text-gray-500 text-sm mt-2 italic">Mezclas artesanales con sales de grano.</p>
+            <span class="inline-block mt-4 text-yellow-700 font-bold text-xs underline group-hover:text-yellow-900">VER VARIEDADES →</span>
+        </div>
+    </a>
+
+    <a href="semillas.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-green-600 hover:shadow-2xl transition-all group">
+        <img src="img/semillas.jpeg" alt="Semillas" class="w-full h-64 object-cover rounded mb-4">
+        <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-red-900 uppercase">Semillas</h3>
+            <p class="text-gray-500 text-sm mt-2 italic">Inicia tu propio cultivo de chiles exóticos.</p>
+            <span class="inline-block mt-4 text-green-700 font-bold text-xs underline group-hover:text-green-900">VER VARIEDADES →</span>
+        </div>
+    </a>
+
+    <a href="chiledeshidratado.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-orange-600 hover:shadow-2xl transition-all group">
+        <img src="img/chilesdeshidratados.jpeg" alt="Chile Deshidratado" class="w-full h-64 object-cover rounded mb-4">
+        <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-red-900 uppercase text-sm md:text-xl">Chile Deshidratado</h3>
+            <p class="text-gray-500 text-sm mt-2 italic">Sabor puro y duradero de nuestra cosecha.</p>
+            <span class="inline-block mt-4 text-orange-700 font-bold text-xs underline group-hover:text-orange-900">VER VARIEDADES →</span>
+        </div>
+    </a>
+
+    <a href="cacahuatesardientes.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-800 hover:shadow-2xl transition-all group">
+        <img src="img/cacahuatesardintes.jpeg" alt="Cacahuates Ardientes" class="w-full h-64 object-cover rounded mb-4">
+        <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-red-900 uppercase text-sm md:text-xl">Cacahuates Ardientes</h3>
+            <p class="text-gray-500 text-sm mt-2 italic">La botana artesanal que no perdona.</p>
+            <span class="inline-block mt-4 text-red-800 font-bold text-xs underline group-hover:text-red-900">VER VARIEDADES →</span>
+        </div>
+    </a>
+
+    <a href="pastapicante.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-yellow-800 hover:shadow-2xl transition-all group">
+        <img src="img/pastasdechile.jpeg" alt="Pasta Picante" class="w-full h-64 object-cover rounded mb-4">
+        <div class="p-4 text-center">
+            <h3 class="text-xl font-bold text-red-900 uppercase">Pasta Picante</h3>
+            <p class="text-gray-500 text-sm mt-2 italic">Textura y picor para cocina gourmet.</p>
+            <span class="inline-block mt-4 text-yellow-900 font-bold text-xs underline group-hover:text-yellow-900">VER VARIEDADES →</span>
+        </div>
+    </a>
+
+</div>
+
+        <div class="mt-16 text-center">
+            <a href="https://wa.me/524251401639" class="inline-flex items-center bg-green-600 text-white font-bold px-8 py-4 rounded-full shadow-2xl hover:bg-green-700 transition transform hover:scale-105 border-4 border-yellow-500 text-lg md:text-xl">
+                <img src="img/WhatsApp.webp" alt="WhatsApp" class="w-8 h-8 mr-3">
+                PÍDELO POR WHATSAPP
+            </a>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-[#1a0505] text-white py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl mb-8 brand-font text-yellow-500">¿Tienes el valor?</h2>
+            <p class="mb-12 text-gray-400 text-lg">Envíos de Michoacán para el mundo. Trato humano y artesanal.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+                <div class="flex items-center space-x-3 bg-white/5 p-4 rounded-xl border border-white/10">
+                    <img src="img/WhatsApp.webp" alt="WhatsApp" class="w-10 h-10">
+                    <div class="text-left">
+                        <p class="text-[10px] uppercase text-gray-500 font-bold">WhatsApp</p>
+                        <p class="text-xl font-bold">425 140 1639</p>
+                    </div>
+                </div>
+
+                <div class="flex space-x-12">
+                    <a href="https://www.facebook.com/SaborPicant" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
+                        <img src="img/Facebook.png" alt="Facebook" class="social-icon mb-3">
+                        <span class="text-xs font-black tracking-tighter group-hover:text-yellow-500 transition">FACEBOOK</span>
+                    </a>
+                    <a href="https://www.instagram.com/saborpicante_" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
+                        <img src="img/instagram.avif" alt="Instagram" class="social-icon mb-3">
+                        <span class="text-xs font-black tracking-tighter group-hover:text-yellow-500 transition">INSTAGRAM</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-24 pt-8 border-t border-gray-900 text-[10px] text-gray-600 uppercase tracking-widest">
+                Sabor Picante © 2026 | Michoacán, México.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
