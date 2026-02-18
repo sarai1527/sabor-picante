@@ -53,6 +53,7 @@
                     <a href="index.html#inicio" class="hover:text-yellow-500 transition">Inicio</a>
                     <a href="index.html#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
                     <a href="index.html#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                    <a href="index.html#envios" class="hover:text-yellow-500 transition">Envios</a>
                     <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
                 </div>
 
@@ -69,14 +70,22 @@
     </header>
 
     <section class="max-w-6xl mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="flex justify-center">
             
-            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-800">
-                <img src="img/CacahuatesArdientes.jpeg" alt="Cacahuates Ardientes" class="w-full h-64 object-cover rounded mb-4">
+            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-800 max-w-sm w-full">
+                <div class="relative">
+                    <img src="img/CacahuatesArdientes.jpeg" alt="Cacahuates Ardientes" class="w-full h-64 object-cover rounded mb-4">
+                    <div class="absolute top-2 right-2 bg-red-700 text-white px-3 py-1 rounded-full font-bold shadow-lg border border-white text-sm">
+                        $50 MXN 
+                    </div>
+                </div>
+                
                 <div class="p-4 text-center">
-                    <h3 class="text-lg font-bold text-red-900 uppercase leading-tight">Cacahuates Ardientes</h3>
+                    <h3 class="text-xl font-bold text-red-900 uppercase leading-tight">Cacahuates Ardientes</h3>
+                    <p class="text-gray-600 font-bold text-xs mb-2 italic">Contenido: 50 gramos</p>
                     <p class="text-gray-500 text-sm mt-2 italic">La botana perfecta para los amantes del picor extremo. Bañados en nuestra mezcla especial de chiles de la casa.</p>
-                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20los%20Cacahuates%20Ardientes" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
+                    
+                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20los%20Cacahuates%20Ardientes%20de%2050g" class="block mt-4 bg-green-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-green-700 transition shadow-md uppercase tracking-wider text-sm">
                         Pedir por WhatsApp
                     </a>
                 </div>
@@ -85,7 +94,7 @@
         </div>
 
         <div class="mt-16 text-center">
-            <a href="index.html#productos" class="inline-flex items-center bg-red-700 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-red-800 transition transform hover:scale-105 border-2 border-yellow-500 text-lg">
+            <a href="index.html#productos" class="inline-flex items-center bg-red-700 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-red-800 transition transform hover:scale-105 border-2 border-yellow-500 text-lg uppercase">
                 ← Volver al Catálogo
             </a>
         </div>

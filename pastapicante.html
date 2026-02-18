@@ -28,6 +28,11 @@
         .product-item { transition: transform 0.3s ease; }
         .product-item:hover { transform: translateY(-8px); }
 
+        /* Color de borde unificado rgb(255, 68, 67) */
+        .border-custom-hot {
+            border-top: 8px solid rgb(255, 68, 67);
+        }
+
         .social-icon {
             width: 32px;
             height: 32px;
@@ -53,6 +58,7 @@
                     <a href="index.html#inicio" class="hover:text-yellow-500 transition">Inicio</a>
                     <a href="index.html#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
                     <a href="index.html#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                    <a href="index.html#envios" class="hover:text-yellow-500 transition">Envios</a>
                     <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
                 </div>
 
@@ -71,12 +77,19 @@
     <section class="max-w-6xl mx-auto px-4 py-12">
         <div class="flex justify-center">
             
-            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-t-8 border-yellow-800 max-w-sm">
-                <img src="img/PastaHabaneroChocolate.jpeg" alt="Pasta de Habanero Chocolate" class="w-full h-80 object-cover rounded mb-4">
+            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-custom-hot max-w-sm w-full">
+                <div class="relative">
+                    <img src="img/PastaHabaneroChocolate.jpeg" alt="Pasta de Habanero Chocolate" class="w-full h-80 object-cover rounded mb-4">
+                    <div class="absolute top-3 right-3 bg-red-700 text-white px-4 py-1 rounded-full font-bold shadow-lg border border-white text-sm">
+                        $200 MXN
+                    </div>
+                </div>
                 <div class="p-4 text-center">
                     <h3 class="text-xl font-bold text-red-900 uppercase leading-tight">Pasta de Habanero Chocolate</h3>
-                    <p class="text-gray-500 text-sm mt-2 italic">Nuestra joya de la corona. Una pasta densa con el toque ahumado del habanero chocolate, ideal para elevar cualquier platillo gourmet.</p>
-                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesa%20la%20Pasta%20de%20Habanero%20Chocolate" class="block mt-6 bg-green-600 text-white font-bold py-3 px-6 rounded-full hover:bg-green-700 transition text-sm">
+                    <p class="text-gray-600 font-bold text-xs mb-3 italic">Frasco: 118 ml</p>
+                    <p class="text-gray-500 text-sm mt-2 italic leading-relaxed">Nuestra joya de la corona. Una pasta densa con el toque ahumado del habanero chocolate, ideal para elevar cualquier platillo gourmet.</p>
+                    
+                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesa%20la%20Pasta%20de%20Habanero%20Chocolate%20de%20118ml" class="block mt-6 bg-green-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-green-700 transition shadow-md uppercase tracking-wider text-sm">
                         Pedir por WhatsApp
                     </a>
                 </div>
@@ -85,15 +98,15 @@
         </div>
 
         <div class="mt-20 text-center">
-            <a href="index.html#productos" class="inline-flex items-center bg-red-700 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-red-800 transition transform hover:scale-105 border-2 border-yellow-500 text-lg">
+            <a href="index.html#productos" class="inline-flex items-center bg-red-700 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-red-800 transition transform hover:scale-105 border-2 border-yellow-500 text-lg uppercase">
                 ← Volver al Catálogo
             </a>
         </div>
     </section>
 
-    <footer id="contacto" class="bg-[#1a0505] text-white py-20 px-4">
+    <footer id="contacto" class="bg-[#1a0505] text-white py-20 px-4 border-t-2 border-yellow-600">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl mb-8 brand-font text-yellow-500">¿Tienes el valor?</h2>
+            <h2 class="text-3xl md:text-5xl mb-8 brand-font text-yellow-500 text-outline">¿Tienes el valor?</h2>
             <p class="mb-12 text-gray-400 text-lg">Directo de Michoacán para tu cocina.</p>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-12">
@@ -117,7 +130,7 @@
                 </div>
             </div>
             
-            <div class="mt-24 pt-8 border-t border-gray-900 text-[10px] text-gray-600 uppercase tracking-widest">
+            <div class="mt-24 pt-8 border-t border-gray-900 text-[10px] text-gray-600 uppercase tracking-widest font-bold">
                 Sabor Picante © 2026 | Michoacán, México.
             </div>
         </div>

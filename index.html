@@ -43,7 +43,6 @@
         .product-item { transition: transform 0.3s ease; }
         .product-item:hover { transform: translateY(-8px); }
 
-        /* Estilo para los iconos sociales */
         .social-icon {
             width: 32px;
             height: 32px;
@@ -67,6 +66,7 @@
                     <a href="#inicio" class="hover:text-yellow-500 transition">Inicio</a>
                     <a href="#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
                     <a href="#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                    <a href="#envios" class="hover:text-yellow-500 transition">Envíos</a>
                     <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
                 </div>
 
@@ -88,9 +88,8 @@
             <h2 class="text-3xl md:text-4xl text-red-800 text-center mb-10 uppercase">Nuestra Raíz</h2>
             <div class="grid md:grid-cols-2 gap-12 items-center text-justify">
                 <div class="space-y-6 text-lg text-gray-800">
-                    <p>Somos una pequeña empresa del estado de <strong>Michoacán, México</strong>. Nos dedicamos al cultivo de chiles regionales y exóticos, así como a crear algunos productos derivados del Chile.</p>
+                    <p>Somos una pequeña empresa del estado de <strong>Michoacán, México</strong>. Nos dedicamos al cultivo de chiles regionales y exóticos, así como a crear productos derivados del Chile.</p>
                     <p>Nuestra pasión comenzó con el cultivo de <strong>Habanero Chocolate</strong> por su gran sabor ahumado y rico picor.</p>
-                    <p>Posteriormente comenzamos a cultivar el famosísimo <strong>Carolina Reaper</strong>, lo que despertó nuestra curiosidad por la inmensa diversidad de chiles que existen en el mundo.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <img src="img/1.jpeg" alt="Proceso" class="img-frame w-full h-64 object-cover shadow-lg">
@@ -102,72 +101,114 @@
 
     <section id="productos" class="max-w-6xl mx-auto px-4 py-20">
         <h2 class="text-4xl md:text-6xl text-white text-center mb-16 uppercase text-outline">Catálogo Exótico</h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-    
-    <a href="hojuelas.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-600 hover:shadow-2xl transition-all group">
-        <img src="img/hojuelas.jpeg" alt="Hojuelas" class="w-full h-64 object-cover rounded mb-4">
-        <div class="p-4 text-center">
-            <h3 class="text-xl font-bold text-red-900 uppercase">Hojuelas</h3>
-            <p class="text-gray-500 text-sm mt-2 italic">Chocolate, Naranja, Jalapeño y Mix Extremo.</p>
-            <span class="inline-block mt-4 text-red-700 font-bold text-xs underline group-hover:text-red-900">VER VARIEDADES →</span>
-        </div>
-    </a>
-
-    <a href="sales.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-yellow-600 hover:shadow-2xl transition-all group">
-        <img src="img/sales.jpeg" alt="Sales" class="w-full h-64 object-cover rounded mb-4">
-        <div class="p-4 text-center">
-            <h3 class="text-xl font-bold text-red-900 uppercase">Sales</h3>
-            <p class="text-gray-500 text-sm mt-2 italic">Mezclas artesanales con sales de grano.</p>
-            <span class="inline-block mt-4 text-yellow-700 font-bold text-xs underline group-hover:text-yellow-900">VER VARIEDADES →</span>
-        </div>
-    </a>
-
-    <a href="semillas.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-green-600 hover:shadow-2xl transition-all group">
-        <img src="img/semillas.jpeg" alt="Semillas" class="w-full h-64 object-cover rounded mb-4">
-        <div class="p-4 text-center">
-            <h3 class="text-xl font-bold text-red-900 uppercase">Semillas</h3>
-            <p class="text-gray-500 text-sm mt-2 italic">Inicia tu propio cultivo de chiles exóticos.</p>
-            <span class="inline-block mt-4 text-green-700 font-bold text-xs underline group-hover:text-green-900">VER VARIEDADES →</span>
-        </div>
-    </a>
-
-    <a href="chiledeshidratado.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-orange-600 hover:shadow-2xl transition-all group">
-        <img src="img/chilesdeshidratados.jpeg" alt="Chile Deshidratado" class="w-full h-64 object-cover rounded mb-4">
-        <div class="p-4 text-center">
-            <h3 class="text-xl font-bold text-red-900 uppercase text-sm md:text-xl">Chile Deshidratado</h3>
-            <p class="text-gray-500 text-sm mt-2 italic">Sabor puro y duradero de nuestra cosecha.</p>
-            <span class="inline-block mt-4 text-orange-700 font-bold text-xs underline group-hover:text-orange-900">VER VARIEDADES →</span>
-        </div>
-    </a>
-
-    <a href="cacahuatesardientes.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-800 hover:shadow-2xl transition-all group">
-        <img src="img/cacahuatesardintes.jpeg" alt="Cacahuates Ardientes" class="w-full h-64 object-cover rounded mb-4">
-        <div class="p-4 text-center">
-            <h3 class="text-xl font-bold text-red-900 uppercase text-sm md:text-xl">Cacahuates Ardientes</h3>
-            <p class="text-gray-500 text-sm mt-2 italic">La botana artesanal que no perdona.</p>
-            <span class="inline-block mt-4 text-red-800 font-bold text-xs underline group-hover:text-red-900">VER VARIEDADES →</span>
-        </div>
-    </a>
-
-    <a href="pastapicante.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-yellow-800 hover:shadow-2xl transition-all group">
-        <img src="img/pastasdechile.jpeg" alt="Pasta Picante" class="w-full h-64 object-cover rounded mb-4">
-        <div class="p-4 text-center">
-            <h3 class="text-xl font-bold text-red-900 uppercase">Pasta Picante</h3>
-            <p class="text-gray-500 text-sm mt-2 italic">Textura y picor para cocina gourmet.</p>
-            <span class="inline-block mt-4 text-yellow-900 font-bold text-xs underline group-hover:text-yellow-900">VER VARIEDADES →</span>
-        </div>
-    </a>
-
-</div>
-
-        <div class="mt-16 text-center">
-            <a href="https://wa.me/524251401639" class="inline-flex items-center bg-green-600 text-white font-bold px-8 py-4 rounded-full shadow-2xl hover:bg-green-700 transition transform hover:scale-105 border-4 border-yellow-500 text-lg md:text-xl">
-                <img src="img/WhatsApp.webp" alt="WhatsApp" class="w-8 h-8 mr-3">
-                PÍDELO POR WHATSAPP
+        <div class="flex flex-wrap justify-center gap-10">
+            <a href="hojuelas.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-600 hover:shadow-2xl transition-all group w-full sm:w-[calc(50%-20px)] md:w-[calc(33.333%-27px)] max-w-sm">
+                <img src="img/hojuelas.jpeg" alt="Hojuelas" class="w-full h-64 object-cover rounded mb-4">
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-bold text-red-900 uppercase">Hojuelas</h3>
+                    <p class="text-gray-500 text-sm mt-2 italic">Chocolate, Naranja, Jalapeño y Mix Extremo.</p>
+                </div>
+            </a>
+            <a href="sales.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-yellow-600 hover:shadow-2xl transition-all group w-full sm:w-[calc(50%-20px)] md:w-[calc(33.333%-27px)] max-w-sm">
+                <img src="img/sales.jpeg" alt="Sales" class="w-full h-64 object-cover rounded mb-4">
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-bold text-red-900 uppercase">Sales</h3>
+                    <p class="text-gray-500 text-sm mt-2 italic">Mezclas artesanales con sales de grano.</p>
+                </div>
+            </a>
+            <a href="semillas.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-green-600 hover:shadow-2xl transition-all group w-full sm:w-[calc(50%-20px)] md:w-[calc(33.333%-27px)] max-w-sm">
+                <img src="img/semillas.jpeg" alt="Semillas" class="w-full h-64 object-cover rounded mb-4">
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-bold text-red-900 uppercase">Semillas</h3>
+                    <p class="text-gray-500 text-sm mt-2 italic">Inicia tu propio cultivo de chiles exóticos.</p>
+                </div>
+            </a>
+            <a href="cacahuatesardientes.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-800 hover:shadow-2xl transition-all group w-full sm:w-[calc(50%-20px)] md:w-[calc(33.333%-27px)] max-w-sm">
+                <img src="img/cacahuatesardintes.jpeg" alt="Cacahuates Ardientes" class="w-full h-64 object-cover rounded mb-4">
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-bold text-red-900 uppercase">Cacahuates Ardientes</h3>
+                    <p class="text-gray-500 text-sm mt-2 italic">La botana artesanal que no perdona.</p>
+                </div>
+            </a>
+            <a href="pastapicante.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-yellow-800 hover:shadow-2xl transition-all group w-full sm:w-[calc(50%-20px)] md:w-[calc(33.333%-27px)] max-w-sm">
+                <img src="img/pastasdechile.jpeg" alt="Pasta Picante" class="w-full h-64 object-cover rounded mb-4">
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-bold text-red-900 uppercase">Pasta Picante</h3>
+                    <p class="text-gray-500 text-sm mt-2 italic">Textura y picor para cocina gourmet.</p>
+                </div>
             </a>
         </div>
     </section>
+
+<section id="envios" class="max-w-5xl mx-auto px-4 py-16">
+        <div class="rustic-card p-6 md:p-12 rounded-lg">
+            <h2 class="text-3xl md:text-5xl text-red-800 text-center mb-10 uppercase">Logística de envios</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="bg-red-800 text-white p-3 rounded-lg rotate-3 shadow-md">
+                            <span class="brand-font text-xl">01</span>
+                        </div>
+                        <h3 class="brand-font text-2xl text-gray-800 uppercase tracking-tighter">Correos de México</h3>
+                    </div>
+                    
+                    <div class="bg-white/60 p-6 rounded-lg border-2 border-orange-200 italic text-gray-800 shadow-inner">
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex justify-between border-b border-orange-100 pb-1">
+                                <span>Costo:</span> <span class="font-bold text-red-800">$50 pesos</span>
+                            </li>
+                            <li class="flex justify-between border-b border-orange-100 pb-1">
+                                <span>Entrega:</span> <span class="font-bold">10-15 días hábiles</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Salidas:</span> <span class="font-bold uppercase text-xs mt-1">Martes o Jueves</span>
+                            </li>
+                        </ul>
+                       
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="bg-yellow-500 text-black p-3 rounded-lg -rotate-3 shadow-md border-2 border-black">
+                            <span class="brand-font text-xl">02</span>
+                        </div>
+                        <h3 class="brand-font text-2xl text-gray-800 uppercase tracking-tighter">DHL / FEDEX</h3>
+                    </div>
+
+                    <div class="bg-white/60 p-6 rounded-lg border-2 border-yellow-200 italic text-gray-800 shadow-inner">
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex justify-between border-b border-yellow-100 pb-1">
+                                <span>Costo:</span> <span class="font-bold text-red-800">$180 pesos</span>
+                            </li>
+                            <li class="flex justify-between border-b border-yellow-100 pb-1">
+                                <span>Entrega:</span> <span class="font-bold">1-2 días hábiles</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Salidas:</span> <span class="font-bold uppercase text-xs mt-1">Lunes o Jueves</span>
+                            </li>
+                        </ul>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-6 border-t-2 border-dashed border-gray-300 text-center">
+                <p class="text-sm text-gray-600 italic">
+                    * Las entregas pueden variar según recolección o zonas extendidas. <br class="hidden md:block"> 
+                    <strong>¡Te mantendremos siempre informado!</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="pb-20 text-center">
+        <a href="https://wa.me/527531073766" class="inline-flex items-center bg-green-600 text-white font-bold px-8 py-4 rounded-full shadow-2xl hover:bg-green-700 transition transform hover:scale-105 border-4 border-yellow-500 text-lg md:text-xl">
+            <img src="img/WhatsApp.webp" alt="WhatsApp" class="w-8 h-8 mr-3">
+            PÍDELO POR WHATSAPP
+        </a>
+    </div>
 
     <footer id="contacto" class="bg-[#1a0505] text-white py-20 px-4">
         <div class="max-w-4xl mx-auto text-center">
@@ -179,16 +220,16 @@
                     <img src="img/WhatsApp.webp" alt="WhatsApp" class="w-10 h-10">
                     <div class="text-left">
                         <p class="text-[10px] uppercase text-gray-500 font-bold">WhatsApp</p>
-                        <p class="text-xl font-bold">425 140 1639</p>
+                        <p class="text-xl font-bold">753 107 3766</p>
                     </div>
                 </div>
 
                 <div class="flex space-x-12">
-                    <a href="https://www.facebook.com/SaborPicant" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
+                    <a href="https://www.facebook.com/SaborPicant" target="_blank" class="flex flex-col items-center group">
                         <img src="img/Facebook.png" alt="Facebook" class="social-icon mb-3">
                         <span class="text-xs font-black tracking-tighter group-hover:text-yellow-500 transition">FACEBOOK</span>
                     </a>
-                    <a href="https://www.instagram.com/saborpicante_" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
+                    <a href="https://www.instagram.com/saborpicante_" target="_blank" class="flex flex-col items-center group">
                         <img src="img/instagram.avif" alt="Instagram" class="social-icon mb-3">
                         <span class="text-xs font-black tracking-tighter group-hover:text-yellow-500 transition">INSTAGRAM</span>
                     </a>

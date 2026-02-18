@@ -41,7 +41,8 @@
 
     <nav class="fixed top-0 w-full z-50 bg-[#1a0505] text-white shadow-2xl border-b-2 border-yellow-600">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-20"> <div class="flex items-center space-x-2">
+            <div class="flex justify-between items-center h-20"> 
+                <div class="flex items-center space-x-2">
                     <a href="index.html" class="flex items-center space-x-2">
                         <img src="img/logo.jpeg" alt="Logo" class="h-12 w-12 rounded-full border-2 border-yellow-500">
                         <span class="brand-font text-sm md:text-xl tracking-tighter">SABOR PICANTE</span>
@@ -52,6 +53,7 @@
                     <a href="index.html#inicio" class="hover:text-yellow-500 transition">Inicio</a>
                     <a href="index.html#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
                     <a href="index.html#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                    <a href="index.html#envios" class="hover:text-yellow-500 transition">Envios</a>
                     <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
                 </div>
 
@@ -69,12 +71,18 @@
         <div class="max-w-2xl mx-auto px-4">
             <input type="text" id="searchInput" placeholder="Buscar variedad (ej: Carolina, Reaper...)" 
             class="w-full p-5 rounded-full border-4 border-green-900 shadow-2xl focus:outline-none focus:ring-4 focus:ring-green-500 text-xl font-medium">
+            
+            <div class="mt-6 p-4 bg-white border-2 border-green-800 rounded-xl shadow-md">
+                <p class="text-green-900 font-bold text-sm md:text-lg">
+                    Todos nuestros packs incluyen <span class="text-red-700 underline">12 semillas</span> sin importar la variedad.
+                </p>
+            </div>
         </div>
     </header>
 
     <section class="max-w-7xl mx-auto px-4 py-12">
         <div id="seedGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-            </div>
+        </div>
 
         <script>
             const chiles = [
@@ -94,33 +102,34 @@
 
             const grid = document.getElementById('seedGrid');
 
-            chiles.forEach(name => {
+chiles.forEach(name => {
                 const displayName = name.replace(/([A-Z])/g, ' $1').trim();
                 const card = document.createElement('div');
                 
-                // Estructura de tarjeta robusta con textos grandes
                 card.className = "product-item bg-white rounded-2xl shadow-2xl border-t-[12px] border-green-800 flex flex-col overflow-hidden transform transition hover:scale-105";
                 card.setAttribute('data-name', displayName.toLowerCase());
 
                 card.innerHTML = `
                     <div class="relative h-64 overflow-hidden">
                         <img src="img/${name}.jpeg" alt="${displayName}" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-red-700 text-white px-4 py-1 rounded-full font-bold shadow-lg border-2 border-white">
+                            $90 MXN
+                        </div>
                     </div>
                     <div class="p-6 text-center flex-grow flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl md:text-2xl font-bold text-red-950 uppercase leading-tight mb-2">${displayName}</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-red-900 uppercase leading-tight mb-2">${displayName}</h3>
                             <p class="text-gray-600 text-sm font-semibold italic mb-6">Semilla de Calidad Premium</p>
                         </div>
                         <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20semillas%20de%20${displayName}" 
                            class="inline-block w-full bg-green-700 text-white text-sm font-extrabold py-4 rounded-xl hover:bg-green-800 transition shadow-lg uppercase tracking-widest">
-                           Pedir por WhatsApp
+                            Pedir por WhatsApp
                         </a>
                     </div>
                 `;
                 grid.appendChild(card);
             });
 
-            // Lógica de búsqueda
             document.getElementById('searchInput').addEventListener('input', function(e) {
                 const term = e.target.value.toLowerCase();
                 const cards = document.querySelectorAll('.product-item');

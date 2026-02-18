@@ -16,12 +16,6 @@
             min-height: 100vh;
         }
 
-        .rustic-card {
-            background-color: rgba(255, 248, 240, 0.98);
-            border: 4px solid #4a0d0d;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
-        }
-
         .text-outline {
             text-shadow: 
                 -2px -2px 0 #000,  
@@ -33,6 +27,11 @@
 
         .product-item { transition: transform 0.3s ease; }
         .product-item:hover { transform: translateY(-8px); }
+
+        /* Color personalizado para el borde superior solicitado */
+        .border-custom-hot {
+            border-top: 8px solid rgb(255, 68, 67);
+        }
 
         .social-icon {
             width: 32px;
@@ -59,6 +58,7 @@
                     <a href="index.html#inicio" class="hover:text-yellow-500 transition">Inicio</a>
                     <a href="index.html#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
                     <a href="index.html#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                    <a href="index.html#envios" class="hover:text-yellow-500 transition">Envios</a>
                     <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
                 </div>
 
@@ -74,49 +74,73 @@
         <p class="text-red-700 font-bold text-xl md:text-2xl brand-font italic">Sabor Ahumado y Picante</p>
     </header>
 
-    <section class="max-w-6xl mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <section class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
             
-            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-800">
-                <img src="img/HojuelasHabaneroChocolate.jpeg" alt="Hojuelas Habanero Chocolate" class="w-full h-64 object-cover rounded mb-4">
+            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-custom-hot w-full max-w-sm">
+                <div class="relative">
+                    <img src="img/HojuelasHabaneroChocolate.jpeg" alt="Hojuelas Habanero Chocolate" class="w-full h-64 object-cover rounded mb-4">
+                    <div class="absolute top-2 right-2 bg-red-700 text-white px-3 py-1 rounded-full font-bold shadow-lg border border-white text-sm">
+                        $160 MXN
+                    </div>
+                </div>
                 <div class="p-4 text-center">
                     <h3 class="text-lg font-bold text-red-900 uppercase leading-tight">Hojuelas Habanero Chocolate</h3>
+                    <p class="text-gray-600 font-bold text-xs mb-2 italic">Contenido: 30 ml</p>
                     <p class="text-gray-500 text-sm mt-2 italic">Intenso sabor ahumado.</p>
-                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20las%20Hojuelas%20Habanero%20Chocolate" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
-                        Consultar por WhatsApp
+                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20las%20Hojuelas%20Habanero%20Chocolate%20de%2030ml" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
+                        Pedir por WhatsApp
                     </a>
                 </div>
             </div>
 
-            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-t-8 border-orange-600">
-                <img src="img/HojuelasHabaneroNaranja.jpeg" alt="Hojuelas Habanero Naranja" class="w-full h-64 object-cover rounded mb-4">
+            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-custom-hot w-full max-w-sm">
+                <div class="relative">
+                    <img src="img/HojuelasHabaneroNaranja.jpeg" alt="Hojuelas Habanero Naranja" class="w-full h-64 object-cover rounded mb-4">
+                    <div class="absolute top-2 right-2 bg-red-700 text-white px-3 py-1 rounded-full font-bold shadow-lg border border-white text-sm">
+                        $160 MXN
+                    </div>
+                </div>
                 <div class="p-4 text-center">
                     <h3 class="text-lg font-bold text-red-900 uppercase leading-tight">Hojuelas Habanero Naranja</h3>
+                    <p class="text-gray-600 font-bold text-xs mb-2 italic">Contenido: 30 ml</p>
                     <p class="text-gray-500 text-sm mt-2 italic">Picor cítrico y vibrante.</p>
-                    <a href="https://wa.me/527531073766?text=Hola,%20me%20interesan%20las%20Hojuelas%20Habanero%20Naranja" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
-                        Consultar por WhatsApp
+                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20las%20Hojuelas%20Habanero%20Naranja%20de%2030ml" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
+                        Pedir por WhatsApp
                     </a>
                 </div>
             </div>
 
-            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-t-8 border-green-600">
-                <img src="img/HojuelasJalapeño.jpeg" alt="Hojuelas Jalapeño" class="w-full h-64 object-cover rounded mb-4">
+            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-custom-hot w-full max-w-sm">
+                <div class="relative">
+                    <img src="img/HojuelasJalapeño.jpeg" alt="Hojuelas Jalapeño" class="w-full h-64 object-cover rounded mb-4">
+                    <div class="absolute top-2 right-2 bg-red-700 text-white px-3 py-1 rounded-full font-bold shadow-lg border border-white text-sm">
+                        $160 MXN
+                    </div>
+                </div>
                 <div class="p-4 text-center">
                     <h3 class="text-lg font-bold text-red-900 uppercase leading-tight">Hojuelas Jalapeño</h3>
+                    <p class="text-gray-600 font-bold text-xs mb-2 italic">Contenido: 30 ml</p>
                     <p class="text-gray-500 text-sm mt-2 italic">Clásico sabor mexicano.</p>
-                    <a href="https://wa.me/527531073766?text=Hola,%20me%20interesan%20las%20Hojuelas%20Jalapeño" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
-                        Consultar por WhatsApp
+                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20las%20Hojuelas%20Jalapeño%20de%2030ml" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
+                        Pedir por WhatsApp
                     </a>
                 </div>
             </div>
 
-            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-t-8 border-red-600">
-                <img src="img/HojuelasMixCarolinaReaperhabaneroChocolate.jpeg" alt="Hojuelas Mix Carolina Reaper y habanero Chocolate" class="w-full h-64 object-cover rounded mb-4">
+            <div class="product-item bg-white p-2 rounded-lg shadow-xl border-custom-hot w-full max-w-sm">
+                <div class="relative">
+                    <img src="img/HojuelasMixCarolinaReaperhabaneroChocolate.jpeg" alt="Hojuelas Mix Carolina Reaper y habanero Chocolate" class="w-full h-64 object-cover rounded mb-4">
+                    <div class="absolute top-2 right-2 bg-red-700 text-white px-3 py-1 rounded-full font-bold shadow-lg border border-white text-sm">
+                        $160 MXN
+                    </div>
+                </div>
                 <div class="p-4 text-center">
-                    <h3 class="text-lg font-bold text-red-900 uppercase leading-tight">Hojuelas Mix Carolina Reaper y habanero Chocolate</h3>
-                    <p class="text-gray-500 text-sm mt-2 italic">Fusión extrema de sabores y picor.</p>
-                    <a href="https://wa.me/527531073766?text=Hola,%20me%20interesa%20el%20Mix%20Carolina%20Reaper%20y%20Habanero%20Chocolate" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
-                        Consultar por WhatsApp
+                    <h3 class="text-lg font-bold text-red-900 uppercase leading-tight">Mix Reaper & Chocolate</h3>
+                    <p class="text-gray-600 font-bold text-xs mb-2 italic">Contenido: 30 ml</p>
+                    <p class="text-gray-500 text-sm mt-2 italic">Fusión extrema de sabores.</p>
+                    <a href="https://wa.me/524251401639?text=Hola,%20me%20interesa%20el%20Mix%20Carolina%20Reaper%20y%20Habanero%20Chocolate%20de%2030ml" class="block mt-4 bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 transition text-sm">
+                        Pedir por WhatsApp
                     </a>
                 </div>
             </div>
@@ -124,15 +148,15 @@
         </div>
 
         <div class="mt-16 text-center">
-            <a href="index.html#productos" class="inline-flex items-center bg-red-700 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-red-800 transition transform hover:scale-105 border-2 border-yellow-500 text-lg">
+            <a href="index.html#productos" class="inline-flex items-center bg-red-700 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:bg-red-800 transition transform hover:scale-105 border-2 border-yellow-500 text-lg uppercase">
                 ← Volver al Catálogo
             </a>
         </div>
     </section>
 
-    <footer id="contacto" class="bg-[#1a0505] text-white py-20 px-4">
+    <footer id="contacto" class="bg-[#1a0505] text-white py-20 px-4 border-t-2 border-yellow-600">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl mb-8 brand-font text-yellow-500">¿Tienes el valor?</h2>
+            <h2 class="text-3xl md:text-5xl mb-8 brand-font text-yellow-500 text-outline">¿Tienes el valor?</h2>
             <p class="mb-12 text-gray-400 text-lg">Envíos de Michoacán para el mundo. Trato humano y artesanal.</p>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-12">
@@ -156,7 +180,7 @@
                 </div>
             </div>
             
-            <div class="mt-24 pt-8 border-t border-gray-900 text-[10px] text-gray-600 uppercase tracking-widest">
+            <div class="mt-24 pt-8 border-t border-gray-900 text-[10px] text-gray-600 uppercase tracking-widest font-bold">
                 Sabor Picante © 2026 | Michoacán, México.
             </div>
         </div>
