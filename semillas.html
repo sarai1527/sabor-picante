@@ -44,21 +44,30 @@
             <div class="flex justify-between items-center h-20"> 
                 <div class="flex items-center space-x-2">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="img/logo.jpeg" alt="Logo" class="h-12 w-12 rounded-full border-2 border-yellow-500">
-                        <span class="brand-font text-sm md:text-xl tracking-tighter">SABOR PICANTE</span>
+                        <img src="img/logo.jpeg" alt="Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-yellow-500">
+                        <span class="brand-font text-xs md:text-xl tracking-tighter uppercase">Sabor Picante</span>
                     </a>
                 </div>
                 
-                <div class="hidden md:flex space-x-8 font-bold text-sm uppercase tracking-widest">
-                    <a href="index.html#inicio" class="hover:text-yellow-500 transition">Inicio</a>
-                    <a href="index.html#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
-                    <a href="index.html#productos" class="hover:text-yellow-500 transition">Catálogo</a>
-                    <a href="index.html#envios" class="hover:text-yellow-500 transition">Envios</a>
-                    <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
-                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex space-x-8 font-bold text-sm uppercase tracking-widest">
+                        <a href="index.html#inicio" class="hover:text-yellow-500 transition">Inicio</a>
+                        <a href="index.html#nosotros" class="hover:text-yellow-500 transition">Nosotros</a>
+                        <a href="index.html#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                        <a href="index.html#envios" class="hover:text-yellow-500 transition">Envios</a>
+                        <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
+                    </div>
 
-                <div class="md:hidden flex">
-                    <a href="#contacto" class="bg-yellow-600 text-black px-4 py-2 rounded text-xs font-bold uppercase">Contacto</a>
+                    <a href="carrito.html" class="relative bg-yellow-600 p-2 rounded-lg hover:bg-yellow-500 transition shadow-lg border border-black/20 flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cartBadgeGlobal" class="absolute -top-2 -right-2 bg-red-700 text-white text-[10px] font-black px-1.5 py-0.5 rounded-full border border-white">0</span>
+                    </a>
+
+                    <div class="md:hidden flex">
+                        <a href="#contacto" class="bg-yellow-600 text-black px-3 py-1.5 rounded text-[10px] font-bold tracking-tighter uppercase">Contacto</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,13 +111,14 @@
 
             const grid = document.getElementById('seedGrid');
 
-chiles.forEach(name => {
+            chiles.forEach(name => {
                 const displayName = name.replace(/([A-Z])/g, ' $1').trim();
                 const card = document.createElement('div');
                 
                 card.className = "product-item bg-white rounded-2xl shadow-2xl border-t-[12px] border-green-800 flex flex-col overflow-hidden transform transition hover:scale-105";
                 card.setAttribute('data-name', displayName.toLowerCase());
 
+                // Ahora el botón dice "Añadir al Carrito" y ejecuta la función con el nombre de la semilla
                 card.innerHTML = `
                     <div class="relative h-64 overflow-hidden">
                         <img src="img/${name}.jpeg" alt="${displayName}" class="w-full h-full object-cover">
@@ -121,15 +131,16 @@ chiles.forEach(name => {
                             <h3 class="text-xl md:text-2xl font-bold text-red-900 uppercase leading-tight mb-2">${displayName}</h3>
                             <p class="text-gray-600 text-sm font-semibold italic mb-6">Semilla de Calidad Premium</p>
                         </div>
-                        <a href="https://wa.me/524251401639?text=Hola,%20me%20interesan%20semillas%20de%20${displayName}" 
-                           class="inline-block w-full bg-green-700 text-white text-sm font-extrabold py-4 rounded-xl hover:bg-green-800 transition shadow-lg uppercase tracking-widest">
-                            Pedir por WhatsApp
-                        </a>
+                        <button onclick="agregarAlCarrito('Semillas: ${displayName}')" 
+                           class="inline-block w-full bg-green-700 text-white text-sm font-extrabold py-4 rounded-xl hover:bg-green-800 transition shadow-lg uppercase tracking-widest cursor-pointer">
+                            Añadir al Carrito
+                        </button>
                     </div>
                 `;
                 grid.appendChild(card);
             });
 
+            // Buscador dinámico
             document.getElementById('searchInput').addEventListener('input', function(e) {
                 const term = e.target.value.toLowerCase();
                 const cards = document.querySelectorAll('.product-item');
@@ -178,6 +189,30 @@ chiles.forEach(name => {
             </div>
         </div>
     </footer>
+
+    <script>
+        function actualizarBadgeCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('pedido_sabor_picante')) || [];
+            const badge = document.getElementById('cartBadgeGlobal');
+            if(badge) {
+                badge.innerText = carrito.length;
+            }
+        }
+
+        function agregarAlCarrito(nombreProducto) {
+            let carrito = JSON.parse(localStorage.getItem('pedido_sabor_picante')) || [];
+            carrito.push(nombreProducto);
+            localStorage.setItem('pedido_sabor_picante', JSON.stringify(carrito));
+            
+            actualizarBadgeCarrito();
+            
+            // Un pequeño aviso en pantalla
+            alert("🔥 ¡Añadido! " + nombreProducto + " se ha guardado en tu carrito.");
+        }
+
+        // Carga el contador al abrir la página
+        document.addEventListener('DOMContentLoaded', actualizarBadgeCarrito);
+    </script>
 
 </body>
 </html>
