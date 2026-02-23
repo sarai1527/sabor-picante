@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pedido | Sabor Picante</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        h1, h2, h3, .brand-font { font-family: 'Alfa Slab One', cursive; letter-spacing: 1px; }
+        body, p { font-family: 'Montserrat', sans-serif; }
+
+        .flame-bg {
+            background: #F5F0E1;
+            min-height: 100vh;
+        }
+
+        .text-outline {
+            text-shadow: 
+                -2px -2px 0 #000,  
+                 2px -2px 0 #000,
+                -2px  2px 0 #000,
+                 2px  2px 0 #000,
+                 0px  4px 6px rgba(0,0,0,0.3);
+        }
+
+        .cart-item {
+            background: white;
+            border-left: 10px solid rgb(255, 68, 67); /* Borde rojo unificado */
+            transition: transform 0.2s ease;
+        }
+        .cart-item:hover { transform: translateX(5px); }
+
+        .social-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+        .social-icon:hover { transform: scale(1.2); }
+    </style>
+</head>
+<body class="flame-bg text-gray-900 antialiased">
+
+    <nav class="fixed top-0 w-full z-50 bg-[#1a0505] text-white shadow-2xl border-b-2 border-yellow-600">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20"> 
+                <div class="flex items-center space-x-2">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="img/logo.jpeg" alt="Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-yellow-500">
+                        <span class="brand-font text-xs md:text-xl tracking-tighter uppercase">SABOR PICANTE</span>
+                    </a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex space-x-8 font-bold text-sm uppercase tracking-widest">
+                        <a href="index.html#inicio" class="hover:text-yellow-500 transition">Inicio</a>
+                        <a href="index.html#productos" class="hover:text-yellow-500 transition">Catálogo</a>
+                        <a href="#contacto" class="hover:text-yellow-500 transition">Contacto</a>
+                    </div>
+                    
+                    <div class="relative bg-yellow-500 p-2 rounded-lg shadow-inner border border-black/20 flex-shrink-0 cursor-default">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span id="cartBadgeGlobal" class="absolute -top-2 -right-2 bg-red-700 text-white text-[10px] font-black px-1.5 py-0.5 rounded-full border border-white">0</span>
+                    </div>
+
+                    <div class="md:hidden flex">
+                        <a href="index.html#productos" class="bg-red-800 text-white px-3 py-1.5 rounded text-[10px] font-bold tracking-tighter uppercase">Seguir Comprando</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-40 pb-12 px-4 text-center">
+        <h1 class="text-5xl md:text-7xl text-white uppercase mb-6 text-outline">Tu Carrito</h1>
+        <p class="text-red-700 font-bold text-2xl md:text-3xl brand-font italic mb-4">Revisa y envía tu pedido</p>
+        <div class="max-w-2xl mx-auto">
+            <div class="h-1 w-24 bg-red-700 mx-auto rounded-full"></div>
+        </div>
+    </header>
+
+    <section class="max-w-4xl mx-auto px-4 py-12 min-h-[40vh]">
+        <div id="cartList" class="space-y-4 mb-12">
+            </div>
+
+        <div id="orderSummary" class="bg-[#1a0505] rounded-3xl shadow-2xl p-8 border-t-4 border-yellow-600 hidden">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left text-white">
+                    <p class="text-gray-400 font-bold uppercase text-xs tracking-widest mb-1">Total de variedades</p>
+                    <p id="totalItemsText" class="text-4xl font-black text-yellow-500 brand-font">0</p>
+                </div>
+                
+                <div class="flex flex-col w-full md:w-auto gap-4">
+                    <button onclick="sendToWhatsApp()" class="bg-green-600 text-white font-black px-10 py-5 rounded-2xl shadow-xl hover:bg-green-700 transition transform hover:scale-105 uppercase tracking-widest flex items-center justify-center space-x-3 text-lg">
+                        <span>Pedir por WhatsApp</span>
+                        <img src="img/WhatsApp.webp" alt="WA" class="w-6 h-6">
+                    </button>
+                    <button onclick="clearCart()" class="text-gray-500 font-bold text-xs uppercase hover:text-red-500 transition text-center">
+                        Vaciar todo el carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="emptyMessage" class="text-center py-20 hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto text-gray-300 mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <p class="text-2xl font-bold text-gray-400 mb-8">Tu carrito está vacío...</p>
+            <a href="index.html#productos" class="inline-block bg-red-800 text-white font-extrabold px-10 py-4 rounded-full shadow-lg uppercase tracking-widest hover:bg-red-900 transition">
+                Ir al Catálogo
+            </a>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-[#1a0505] text-white py-24 px-4 border-t-4 border-yellow-600 mt-20">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl mb-10 brand-font text-yellow-500 text-outline">¿Listo para el reto?</h2>
+            <p class="mb-14 text-gray-300 text-xl font-medium">Asesoría personalizada. Directo desde Michoacán.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+                <div class="flex items-center space-x-4 bg-white/10 p-6 rounded-2xl border-2 border-green-600 shadow-lg">
+                    <img src="img/WhatsApp.webp" alt="WhatsApp" class="w-12 h-12">
+                    <div class="text-left">
+                        <p class="text-xs uppercase text-green-500 font-black tracking-widest">Atención Directa</p>
+                        <p class="text-2xl font-black">425 140 1639</p>
+                    </div>
+                </div>
+
+                <div class="flex space-x-12">
+                    <a href="https://www.facebook.com/SaborPicant" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
+                        <img src="img/Facebook.png" alt="Facebook" class="social-icon mb-3">
+                        <span class="text-xs font-black tracking-tighter group-hover:text-yellow-500 transition">FACEBOOK</span>
+                    </a>
+                    <a href="https://www.instagram.com/saborpicante_" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center group">
+                        <img src="img/instagram.avif" alt="Instagram" class="social-icon mb-3">
+                        <span class="text-xs font-black tracking-tighter group-hover:text-yellow-500 transition">INSTAGRAM</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-24 pt-10 border-t border-white/10 text-xs text-gray-500 uppercase tracking-[0.3em] font-bold">
+                Sabor Picante © 2026 | El Corazón del Chile en México.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cargar memoria del carrito
+        let cart = JSON.parse(localStorage.getItem('pedido_sabor_picante')) || [];
+
+        function updateDisplay() {
+            const listContainer = document.getElementById('cartList');
+            const summary = document.getElementById('orderSummary');
+            const emptyMsg = document.getElementById('emptyMessage');
+            const badge = document.getElementById('cartBadgeGlobal');
+            const totalText = document.getElementById('totalItemsText');
+
+            // Actualizar icono de la barra de arriba
+            if(badge) badge.innerText = cart.length;
+            
+            // Limpiar la lista visual
+            listContainer.innerHTML = '';
+
+            // Revisar si está vacío
+            if (cart.length === 0) {
+                summary.classList.add('hidden');
+                emptyMsg.classList.remove('hidden');
+            } else {
+                summary.classList.remove('hidden');
+                emptyMsg.classList.add('hidden');
+                totalText.innerText = cart.length;
+
+                // Construir cada producto en la lista
+                cart.forEach((item, index) => {
+                    const div = document.createElement('div');
+                    div.className = "cart-item p-4 md:p-6 rounded-2xl shadow-md flex justify-between items-center";
+                    div.innerHTML = `
+                        <div class="pr-4">
+                            <h3 class="text-lg md:text-xl font-bold text-red-950 uppercase tracking-tighter leading-tight">${item}</h3>
+                            <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mt-1">Sabor Picante Original</p>
+                        </div>
+                        <button onclick="removeItem(${index})" class="bg-red-50 text-red-600 hover:bg-red-600 hover:text-white p-3 rounded-xl transition flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    `;
+                    listContainer.appendChild(div);
+                });
+            }
+        }
+
+        // Borrar un producto específico
+        function removeItem(index) {
+            cart.splice(index, 1); // Quitar de la lista
+            localStorage.setItem('pedido_sabor_picante', JSON.stringify(cart)); // Guardar memoria actualizada
+            updateDisplay(); // Refrescar pantalla
+        }
+
+        // Borrar TODO el carrito
+        function clearCart() {
+            if(confirm('¿Estás seguro que deseas vaciar toda tu lista de pedido?')) {
+                cart = [];
+                localStorage.setItem('pedido_sabor_picante', JSON.stringify(cart));
+                updateDisplay();
+            }
+        }
+
+        // Enviar WhatsApp (AQUÍ ESTÁ TU NÚMERO)
+        function sendToWhatsApp() {
+            const phone = "524251401639"; 
+            
+            // Creamos una lista con viñetas para que se vea bonita en WhatsApp
+            const items = cart.join("%0A🌶️ ");
+            
+            const message = `¡Hola Sabor Picante! 🔥%0A%0AQuiero realizar un pedido con los siguientes productos:%0A%0A🌶️ ${items}%0A%0A¿Me podrían confirmar la disponibilidad y el costo total con envío, por favor?`;
+            
+            // Abre WhatsApp (en web o en app)
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', updateDisplay);
+    </script>
+
+</body>
+</html>
