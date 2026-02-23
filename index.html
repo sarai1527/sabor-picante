@@ -250,7 +250,7 @@
 
     <script>
         function actualizarBadgeCarrito() {
-            // Revisa la "memoria" del navegador en busca de productos guardados
+
             const carrito = JSON.parse(localStorage.getItem('pedido_sabor_picante')) || [];
             const badge = document.getElementById('cartBadgeGlobal');
             if(badge) {
@@ -258,9 +258,9 @@
             }
         }
 
-        // Se ejecuta automáticamente en cuanto carga la página
         document.addEventListener('DOMContentLoaded', actualizarBadgeCarrito);
     </script>
 
 </body>
+
 </html>
