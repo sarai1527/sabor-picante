@@ -146,6 +146,13 @@
                     <p class="text-gray-500 text-sm mt-2 italic">Textura y picor para cocina gourmet.</p>
                 </div>
             </a>
+            <a href="mielcaliente.html" class="product-item block bg-white p-2 rounded-lg shadow-xl border-t-8 border-orange-500 hover:shadow-2xl transition-all group w-full sm:w-[calc(50%-20px)] md:w-[calc(33.333%-27px)] max-w-sm">
+                <img src="img/MielCaliente.jpeg" alt="Miel Caliente" class="w-full h-64 object-cover rounded mb-4">
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-bold text-red-900 uppercase">Miel Caliente</h3>
+                    <p class="text-gray-500 text-sm mt-2 italic">Dulzor natural con un toque ardiente.</p>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -251,7 +258,6 @@
 
     <script>
         function actualizarBadgeCarrito() {
-
             const carrito = JSON.parse(localStorage.getItem('pedido_sabor_picante')) || [];
             const badge = document.getElementById('cartBadgeGlobal');
             if(badge) {
@@ -263,8 +269,4 @@
     </script>
 
 </body>
-
 </html>
-
-
-
